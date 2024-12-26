@@ -142,10 +142,12 @@ export const UserButton = () => {
               <DropdownMenuShortcut><GiCash className="h-4 w-4 mr-2" /></DropdownMenuShortcut>
             </DropdownMenuItem>
           </Link>
-          <DropdownMenuItem disabled>
-            Settings
-            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-          </DropdownMenuItem>
+          <Link href="/profile/tickets/" >
+            <DropdownMenuItem >
+              Tickets
+              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+            </DropdownMenuItem>
+          </Link>
           <DropdownMenuItem disabled>
             Keyboard shortcuts
             <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>

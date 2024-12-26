@@ -154,6 +154,45 @@ model Code {
   updatedAt  DateTime @updatedAt
 }
 
+// model ContactForm {
+//   id        String   @id @default(uuid())
+//   userId    String
+//   username  String
+//   email     String
+//   message   String   @db.Text
+//   updatedBy String   @default("admin")
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+
+//   @@index([userId])
+// }
+
+model ContactForm {
+  id        String    @id @default(uuid()) // The unique ID for the contact form
+  userId    String // User's ID
+  username  String // User's name
+  email     String // User's email
+  messages  Message[] // Relationship to the messages in the conversation
+  title     String
+  createdAt DateTime  @default(now()) // Timestamp when the contact form is created
+  updatedAt DateTime  @updatedAt // Timestamp for the last update
+  updatedBy String? // Track who updated the contact form (e.g., admin's username)
+
+  @@index([userId])
+}
+
+model Message {
+  id        String   @id @default(uuid()) // Unique ID for each message
+  ticketId  String // Foreign key for the contact form (thread)
+  sender    String // Can be 'user' or 'admin'
+  content   String   @db.Text // Message content
+  createdAt DateTime @default(now()) // Timestamp for when the message is created
+
+  contact ContactForm @relation(fields: [ticketId], references: [id]) // Relationship to the ContactForm
+
+  @@index([ticketId])
+}
+
 model Course {
   id          String     @id @default(uuid())
   userId      String

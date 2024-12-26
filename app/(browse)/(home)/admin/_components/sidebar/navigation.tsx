@@ -26,11 +26,11 @@ export const Navigation = () => {
       href: `/admin/courses/`,
       icon: KeyRound,
     },
-    // {
-    //   label: "Chat",
-    //   href: `/u/${user?.username}/chat`,
-    //   icon: MessageSquare,
-    // },
+    {
+      label: "Chat",
+      href: `/admin/messages/`,
+      icon: MessageSquare,
+    },
     // {
     //   label: "Community",
     //   href: `/u/${user?.username}/community`,
