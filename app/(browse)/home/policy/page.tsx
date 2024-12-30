@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const PolicyPage = () => {
     return (
         <div className="p-10">
@@ -66,10 +68,7 @@ const PolicyPage = () => {
                 <br /><br />
                 **اتصل بنا**
                 <br />
-                إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يرجى الاتصال بنا:
-                <br />
-                * عبر البريد الإلكتروني: [Private E-mail]
-                * من خلال زيارة هذه الصفحة على موقعنا: [أدخل رابط الموقع، إن أمكن]
+                إذا كان لديك أي أسئلةاو استفسارات اخرى حول سياسات الخصوصية هذه، يرجى <span className=" font-extrabold from-neutral-400"><Link href="/home/contact"> الضغط هنا </Link></span>
 
 
             </p>
